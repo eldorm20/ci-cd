@@ -16,7 +16,7 @@ jobs:
         run: |
           echo "Building website..."
           mkdir public
-          echo "<h1>Hello, GitHub Pages!</h1>" > public/index.html
+          echo "<h1>Hello, GitHub Pages!</h1>" > ./index.html
           git config --global user.email "eldormuhammadjonov@gmail.com"
           git config --global user.name "eldorm20"
           git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/eldorm20/ci-cd.git
