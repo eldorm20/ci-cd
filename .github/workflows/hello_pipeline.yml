@@ -1,10 +1,26 @@
-name: Hello Pipeline
+name: CI/CD Pipeline
 on: push
 jobs:
-  print-message:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
-      - name: Print a Message
-        run: echo "Hello, DevOps World!"
+      
+      - name: Install Dependencies
+        run: |
+          echo "Installing dependencies..."
+          sudo apt update && sudo apt install -y curl
+      
+      - name: Build Project
+        run: echo "Building the project..."
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Run Tests
+        run: echo "Running automated tests..."
