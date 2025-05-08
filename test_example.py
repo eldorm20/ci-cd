@@ -14,4 +14,4 @@ def test_zero():
 
 # Intentional failing test
 def test_failure():
-    assert add(2, 2) == 5  # ❌ Wrong expected result!
+    assert add(2, 2) == 4  # ✅ Fixed expected value!
